@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Example Countdown Timer for multiple Date-Time</title>
+<style type="text/css">
+h2, h3 {text-align:center;}
+
+#cdttimer, #xyztimer {
+ width:325px;
+ background:#b0e1b1;
+ margin:8px auto;
+ padding:5px;
+ text-align:center;
+ line-height:160%;
+}
+#cdtshow, #xyzshow {
+ width:200px;
+ margin:1em auto;
+ font-weight:800;
+}
+span { color:#0001da; }
+</style>
+</head>
+<body>
+<h2>Countdown Timer for multiple Date-Time</h2>
+
+<div id="cdtshow">
+Years: <span id="cdtyears">0</span><br/>
+Months: <span id="cdtmonths">0</span><br/>
+Days: <span id="cdtdays">0</span><br/>
+Hours: <span id="cdthours">0</span><br/>
+Minutes: <span id="cdtmints">0</span><br/>
+Seconds: <span id="cdtsecs">0</span>
+</div><hr/>
+<div id="cdttimer">
+Until: <span id="cdtfmonth">12</span>/<span id="cdtfday">31</span>/<span id="cdtfyear">2018</span>
+ - <span id="cdtfhour">18</span>:<span id="cdtfmints">33</span>:<span id="cdtfsecs">00</span>
+</div><hr/>
+
+<h3>Seccond countdown timer</h3>
+<div id="xyzshow">
+Years: <span id="xyzyears">0</span><br/>
+Months: <span id="xyzmonths">0</span><br/>
+Days: <span id="xyzdays">0</span><br/>
+Hours: <span id="xyzhours">0</span><br/>
+Minutes: <span id="xyzmints">0</span><br/>
+Seconds: <span id="xyzsecs">0</span>
+</div><hr/>
+<div id="xyztimer">
+Until: <span id="xyzfmonth">2</span>/<span id="xyzfday">21</span>/<span id="xyzfyear">2021</span>
+ - <span id="xyzfhour">10</span>:<span id="xyzfmints">30</span>:<span id="xyzfsecs">00</span>
+</div>
+
+<script type="text/javascript" src="cdtime.js"></script>
+
+<script type="text/javascript">
+// starts countdown for first date-time, using the objCT object defined in cdtime.js (with 'dtc')
+objCT.startCDT();
+
+// creates another object of the countdownTime class, with 'xyz' which is the prefix of the seccond group of elements
+var obXYZ = new countdownTime('xyz');
+obXYZ.startCDT();           // starts the countdown for the seccond group
+</script>
+</body>
+</html>

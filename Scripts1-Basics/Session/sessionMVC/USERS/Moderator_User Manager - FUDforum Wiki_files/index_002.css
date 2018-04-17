@@ -1,0 +1,108 @@
+#firstHeading .editsection a { color: white; text-decoration: underline }
+
+body.page-Main_Page #t-cite,
+body.page-Main_Page #lastmod, 
+body.page-Main_Page #siteSub {
+    display: none !important;
+}
+
+/* block quotations */
+#mw_content blockquote {
+    font-size: 93.75%; /* equivalent of 15px in 16px default */
+    margin: 1em 1.6em; /* same indent as an unordered list */
+}
+#mw_content blockquote p {
+    line-height:inherit;
+}
+
+/* Display "From Wikipedia, the free encyclopedia" */
+#siteSub {
+    display: block;
+}
+
+/* Bold 'edit this page' link to encourage newcomers */
+/* Commented because this is not the default skin */
+/* #ca-edit a { font-weight: bold !important; } */
+
+/* Accessibility experiment: make diff changes not just colour-based */ 
+ 
+.diffchange {
+    font-weight: bold;
+    background-color: inherit;
+}
+ 
+td.diff-addedline, td.diff-deletedline, td.diff-context {
+    vertical-align: top;
+    font-size: 85%;
+    color: inherit;
+}
+
+p.error {
+    font-weight: bold;
+}
+
+#mw_contentholder { padding-top: .4em } /* some headroom for #coordinates to go in without #siteSub */
+
+#coordinates {  
+    position:absolute;
+    z-index:1;
+    border:none;
+    background:none;
+    right:1.17em;
+    top:5em;
+    float:right;
+    margin:0.0em;
+    padding:0.0em;
+    line-height:1.5em;
+    text-align:right;
+    text-indent:0;
+    font-size:85%;
+    text-transform:none;
+    white-space:nowrap;
+}
+
+#coordinates img { vertical-align: top }
+/* important to keep the text predictably positioned */
+
+/* allow disabling of "external" color on internal links in some situations */
+#bodyContent .plainlinks2 a.external[href^="http://en.wikipedia.org"] {
+	color: #003366 !important
+}
+
+div.topicon {
+display:block !important;
+position:absolute;
+top:10px;
+z-index:100;
+}
+
+/* for Template:Link-FA */
+li.FA {
+    list-style-image: url("http://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Modern-bullet-star.svg/9px-Modern-bullet-star.svg.png");
+}
+
+.toccolours {
+background-color:#F0F0F0;
+border:1px solid #BBBBBB;
+border-spacing:0pt;
+margin:0pt;
+padding:0pt;
+}
+
+.mw-topboxes {
+margin-top: -0.4em
+}
+
+.catlinks {
+margin: 1em 0 0.5em 0;
+}
+
+/* Style Visualizing redirects for fudforum wiki*/
+#contentSub {
+    color: #006633;
+    text-align: right;
+    font-size: xx-small;
+    padding: 0;
+    margin: 0;
+    line-height:5px;
+}

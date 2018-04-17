@@ -1,0 +1,9 @@
+HTACCESS files is a directory level configuration file  supported by apache server
+and several types of servers.
+They are placed inside th web tree and they are able to overide the sub set of 
+the servers global configuration for that particular directory that the file is
+in.
+
+Perform redirect
+clean url
+security implementation

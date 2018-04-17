@@ -1,0 +1,40 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<style>
+
+table {
+  margin-top: 2em;
+}
+
+thead {
+  background-color: #eeeeee;
+}
+
+tbody {
+  background-color: #ffffee;
+}
+
+th,td {
+  padding: 3pt;
+}
+
+table.separate {
+  border-collapse: separate;
+  border-spacing: 5pt;
+  border: 3pt solid #33d;
+}
+
+table.separate td {
+  border: 2pt solid #33d;
+}
+
+table.collapse {
+  border-collapse: collapse;
+  border: 1pt solid black;  
+}
+
+table.collapse td {
+  border: 1pt solid black;
+}
+</style>
+
+</head>

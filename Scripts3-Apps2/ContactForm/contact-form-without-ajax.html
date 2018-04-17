@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Contact Form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+body{font-family:arial; text-align:center; margin:0; background: #666; }
+input, textarea{border:solid 1px #000; padding:6px; font-size:14px; color:#333333; width:200px;}
+#wrap{margin:0 auto; width:200px; margin-top:50px;}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+//function to vaildate valid email adresses
+function isValidEmailAddress(emailAddress) {
+	var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+	return pattern.test(emailAddress);
+}
+
+//function to trim spaces at the beginning and end of a string
+function trim(str) {
+        return str.replace(/^\s+|\s+$/g,"");
+ }
+ 
+//function to validate values entered in the form
+function validate()
+{
+	//get the values entered into the form elements
+	var name = trim($("#name").val());
+	var email = trim($("#email").val());
+	var feedback = trim($("#feedback").val());
+	
+	//reset the border color of the form elements to the default color before you check their validity
+	$("#name").css({"border":"solid 1px #000"});
+	$("#email").css({"border":"solid 1px #000"});
+	$("#feedback").css({"border":"solid 1px #000"});
+	
+	//check it the user entered a valid value in the name field
+	if(name == "enter your name")
+	{
+		$("#name").css({"border":"solid 1px #FF0000"});
+		return false;
+	}
+
+	//check it the user entered a valid email address in the email field
+	if(email == "enter email address" || !isValidEmailAddress(email))
+	{
+		$("#email").css({"border":"solid 1px #FF0000"});
+		return false;
+	}
+
+	//check it the user entered a valid value in the feedback field
+	if(feedback == "enter feedback message")
+	{
+		$("#feedback").css({"border":"solid 1px #FF0000"});
+		return false;
+	}
+	
+	//valid values have been entered in all the fields so return true
+	return true;
+}
+
+</script>
+</head>
+<body>
+	<div id="wrap">
+    	<div id="contactwrap">
+            <form id="contactform" onSubmit="return validate();" method="post" action="process.php">
+              <table width="100%" border="0">
+                  <tr>
+                    <td><input type="text" id="name" name="name" onFocus="if (this.value == 'enter your name') {this.value = '';}"  onBlur="if (this.value == '') {this.value = 'enter your name';}"  value="enter your name"></td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" id="email" name="email" onFocus="if (this.value == 'enter email address') {this.value = '';}"  onBlur="if (this.value == '') {this.value = 'enter email address';}"  value="enter email address"></td>
+                  </tr>
+                  <tr>
+                    <td><textarea id="feedback" name="feedback" onFocus="if (this.value == 'enter feedback message') {this.value = '';}"  onBlur="if (this.value == '') {this.value = 'enter feedback message';}">enter feedback message</textarea></td>
+                  </tr>
+                  <tr>
+                    <td><input name="submit" type="submit" id="submitbtn" value="Submit"></td>
+                  </tr>
+                </table>
+          </form>
+        </div>    
+    </div>
+</body>
+</html>

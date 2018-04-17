@@ -1,0 +1,14 @@
+Derek,123,nairobi,kenya
+Sally,123,kisumu,kenya
+Mike,123,mombasa,kenya
+Mary,123,riftvalley,kenya
+Job,123,nakuru,kenya
+
+Rick,123,nakuru,kenya
+Rick,123,nakuru,kenya
+Rick,123,nakuru,kenya
+Rick,123,nakuru,kenya
+Rick,123,nakuru,kenya
+Rick,123,nakuru,kenya
+Rick,123,nakuru,kenya
+Rick,123,nakuru,kenya

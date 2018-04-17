@@ -1,0 +1,15 @@
+#Disabling UAC 
+#Notes on  CURL
+#Notes on mod_rewrite
+#Notes on AllowOveride either use All or none
+#Removing index.php
+#The request that we get from the url of the current page
+#d-director
+#f-file
+#l-symbolic link
+#QSA-Query String Append
+#RewriteBase /locaction/ i.e when project is in folder 
+
+
+
+ErrorDocument 404 /redirect/error.php

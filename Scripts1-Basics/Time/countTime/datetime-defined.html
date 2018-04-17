@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Example Countdown Timer until a specified Date-Time defined in page</title>
+<style type="text/css">
+h2 {text-align:center;}
+
+#cdttimer {
+ width:325px;
+ background:#edeffe;
+ margin:8px auto;
+ padding:5px;
+ text-align:center;
+ line-height:160%;
+}
+#cdtshow {
+ width:200px;
+ margin:1em auto;
+ font-weight:800;
+}
+span { color:#0001da; }
+</style>
+</head>
+<body>
+<h2>Countdown Timer until a specified Date-Time defined in page</h2>
+
+<div id="cdtshow">
+Years: <span id="cdtyears">0</span><br/>
+Months: <span id="cdtmonths">0</span><br/>
+Days: <span id="cdtdays">0</span><br/>
+Hours: <span id="cdthours">0</span><br/>
+Minutes: <span id="cdtmints">0</span><br/>
+Seconds: <span id="cdtsecs">0</span>
+</div><hr/>
+<div id="cdttimer">
+Until: <span id="cdtfmonth">12</span>/<span id="cdtfday">31</span>/<span id="cdtfyear">2018</span>
+ - <span id="cdtfhour">18</span>:<span id="cdtfmints">33</span>:<span id="cdtfsecs">00</span>
+</div>
+<script type="text/javascript" src="cdtime.js"></script>
+
+<br/><br/><br/><br/><br/>
+<script type="text/javascript">objCT.startCDT();</script>
+<center>Free JavaScript & jQuery Course, tutorials, and code snippets: <a href="http://coursesweb.net/javascript/" title="Free JavaScript & jQuery Course">http://coursesweb.net/javascript/</a></center><br/>
+</body>
+</html>

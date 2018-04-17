@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<people>
+		<person type="boy">
+		<name>Jesse</name>
+		<age>22</age>
+		<body-weight>
+				<w1>123 pounds</w1>
+				<w2>167 pounds</w2>
+		</body-weight>
+		</person>
+		
+		<person type="girl">
+		<name>sheila</name>
+		<age>21</age>
+		<body-weight>
+				<w1>131 pounds</w1>
+				<w2>118 pounds</w2>
+		</body-weight> 
+		</person>
+</people>
+

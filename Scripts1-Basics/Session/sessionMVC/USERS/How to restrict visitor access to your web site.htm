@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<title>How to restrict visitor access to your web site</title>
+	<meta name="description" content="We will learn various ways of restricting the visitor's access to your web site">
+	<meta name="keywords" content="restrict visitor, access, web site, PHP, tutorial">
+	<meta name="robots" content="all">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="author" content="Mihalcea Romeo, roScripts">
+	<meta name="copyright" content="copyright 2006 - 2013 www.roscripts.com">
+<!--
+                     ____                               __
+                    /\  _`\                  __        /\ \__
+          _ __   ___\ \,\L\_\    ___   _ __ /\_\  _____\ \ ,_\   ____
+         /\`'__\/ __`\/_\__ \   /'___\/\`'__\/\ \/\ '__`\ \ \/  /',__\
+         \ \ \//\ \L\ \/\ \L\ \/\ \__/\ \ \/ \ \ \ \ \L\ \ \ \_/\__, `\
+          \ \_\ \____/\ `\____\ \____\ \_\  \ \_\ \ ,__/\ \__\/\____/
+           \/_/ \/___/  \/_____/\/____/ \/_/   \/_/\ \ \/  \/__/\/___/
+                                                    \ \_\
+                                                     \/_/
+                                                Making your world easy
+-->
+	<link href="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/styles.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/mootools.js"></script>
+	<script type="text/javascript" src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/custom.js"></script>
+	<script type="text/javascript">
+		window.addEvent('domready', function(){
+		var mySlide = new Fx.Slide('container');
+		var mySlide1 = new Fx.Slide('container1');
+		var mySlide2 = new Fx.Slide('container2');
+		var mySlide3 = new Fx.Slide('container3');
+		$('toggle').addEvent('click', function(e){e = new Event(e);mySlide.toggle();e.stop();});
+		$('toggle1').addEvent('click', function(e){e = new Event(e);mySlide1.toggle();e.stop();});
+		$('toggle2').addEvent('click', function(e){e = new Event(e);mySlide2.toggle();e.stop();});
+		$('toggle3').addEvent('click', function(e){e = new Event(e);mySlide3.toggle();e.stop();});
+		});
+	</script>
+	<script type="text/javascript">
+            var xajaxRequestUri="http://www.roscripts.com/How_to_restrict_visitor_access_to_your_web_site-122.html";
+            var xajaxDebug=false;
+            var xajaxStatusMessages=false;
+            var xajaxWaitCursor=true;
+            var xajaxDefinedGet=0;
+            var xajaxDefinedPost=1;
+            var xajaxLoaded=false;
+         function xajax_insertRating(){return xajax.call("insertRating", arguments, 1);}
+         function xajax_bury(){return xajax.call("bury", arguments, 1);}
+         function xajax_bookmark(){return xajax.call("bookmark", arguments, 1);}
+         function xajax_insert_bookmark(){return xajax.call("insert_bookmark", arguments, 1);}
+         function xajax_del_bookmark(){return xajax.call("del_bookmark", arguments, 1);}
+	</script>
+	<script type="text/javascript" src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/xajax.js"></script>
+	<script type="text/javascript">
+window.setTimeout(function () { if (!xajaxLoaded) { alert('Error: the xajax Javascript file could not be included. Perhaps the URL is incorrect?\nURL: http://www.roscripts.com//js/xajax_js/xajax.js'); } }, 6000);
+	</script>
+</head>
+<body>
+	<div class="sidebar">
+		<img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/sidebar_articles.gif" alt="articles section" border="0" height="103px" width="28px">
+	</div>
+
+	<div id="behind_logo">
+	<div id="logo" class="threecols">
+	<div style="position:absolute;top:60px;width:910px" align="right">
+		<span class="header-menu">
+			<a href="http://www.roscripts.com/" title="PHP Scripts">PHP Scripts</a> | 
+			<a href="http://www.roscripts.com/login" title="login">Login</a> | 
+			<a href="http://www.roscripts.com/register" title="register">Register</a> | 
+			<a href="http://www.roscripts.com/search" title="search">Search</a> | 
+			<a href="http://www.roscripts.com/contact" title="contact us">Contact</a>
+		</span>
+	</div>
+	<div id="search_div">
+		<form action="http://www.roscripts.com/search/perform" method="post" name="ss" class="form" id="ss">
+			<input name="search" id="search_listing" type="text">
+			<input name="radio" value="1" type="hidden">
+			<input name="Submit" src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/searchbutton.gif" value="Submit" type="image">
+		</form>
+	</div>
+	</div>
+	</div>
+<!--C O N T A I N E R  S T A R T-->
+<div id="wrapper" class="threecols">
+	<div id="header">
+		<div class="menucontainer" align="left">
+		<div class="menu">
+			<ul>
+				<li><a href="http://www.roscripts.com/listings" title="Scripts">Scripts</a></li>
+				<li><a href="http://www.roscripts.com/articles" title="News and articles">Articles</a></li>
+	  			<li><a href="http://www.roscripts.com/jobs" title="Freelance Jobs">Jobs</a></li>
+	  			<li><a href="http://www.roscripts.com/nominate" title="Resources">Resources</a></li>
+	  			<li><a href="http://www.roscripts.com/snippets" title="snippets">Snippets</a></li>
+	  			<li><a href="http://www.roscripts.com/web_directory" title="web directory">Directory</a></li>
+	  			<li><a href="http://www.roscripts.com/forum" title="forum">Forum</a></li>
+	  		</ul>
+	  	</div>
+	</div>
+ </div> <div style="background-color: white; font-size: 1.4em; border-style: solid; margin: auto; text-align: center;">Are you interested in <a href="http://www.wmmediacorp.com/">selling one of your websites</a>? If you are, check out <a href="http://www.wmmediacorp.com/aboutus.php">WM Media</a>, which is a company that <a href="http://www.wmmediacorp.com/">buys websites</a>. They have bought websites ranging from $1k to $250k.</div>
+<div style="background-color: white; font-size: 1.4em; border-style: solid; margin: auto; text-align: center;">If you are looking for hosting, we highly recommend <a href="http://www.roscripts.com/reviews/liquidweb.html">Liquid Web</a></div>
+<center><a href="http://www.wlmarketing.com/social-bookmarking-service.html?rid=rosripts"><img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/social-bookmarking-728.jpg" alt="Social Bookmarking" title="Social Bookmarking"></a><br>
+WL Marketing - Your #1 source for <a href="http://www.wlmarketing.com/?rid=rosripts">building links</a>
+</center><div>	</div>
+	<!--R I G H T  S T A R T-->
+	<div id="right">
+	 <div id="top_corner"></div>
+        <div style="padding:10px">
+       <div class="tabs_arround">
+       <div class="tabs" style="margin-bottom:5px">
+		<h1 class="title_tabMain">How to restrict visitor access to your web site</h1>
+		<ul>
+			<li class="active">
+				<a id="toggle" href="#" name="toggle">
+				<img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/1.gif" alt="toogle" border="0" height="16" width="16">
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	
+       <div style="margin: 0px; overflow: hidden;"><div style="margin: 0px;" id="container">
+	<div id="site_news">
+		<div>
+			<span><strong>Browse, nominate and vote</strong> the best webmaster resources on the net. Check out the <a href="http://www.roscripts.com/nominate">resources section</a>.</span>
+		</div>
+	</div>
+<br><center><div style="margin: 0 3px 3px 0;"><a href="http://www.wlmarketing.com/webdev.html"><img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/wl_330x250_1.gif" border="0"></a></div>
+</center>       	<div class="tabs_bottom">
+	<div style="margin-bottom:10px">
+	<div class="adz">&nbsp;</div>
+<!--        <div style="width:336px;height:280px;float:left;">
+<a href="http://www.wallpaperscript.net" title="Wallpaper script" target="_blank" border="0"><img border="0" src="http://www.roscripts.com/uploads/banners/336_280.gif" alt="Wallpaper script"></a>
+        </div> -->
+	<div class="socials">
+	<ul>
+		<li class="feed"><a href="http://feeds.feedburner.com/ArticlesAndProgrammingTutorials" title="Subscribe to our feed" target="_blank">get the feed<em>Do you like our posts? Wanna stay informed and be the first to know when we publish new content?</em></a></li>
+		<li class="nletter"><a href="javascript:void(0);" onclick="myPopup2('http://www.roscripts.com/scripts/add_newsletter.php')" title="Subscribe to our newsletter">subscribe to our newsletter<em>Weekly newsletters with the best websites organized by categories and other news.</em></a></li>
+	</ul>
+</div>
+        </div>
+	
+	 I will start this tutorial by telling you that it's wrong to restrict access to your visitors. Why would you want to do that? 
+
+Maybe you want to restrict spam bots - you should use <a href="http://www.roscripts.com/PHP_captcha_script-88.html" target="_blank">captcha</a>
+ in this case. 
+
+Maybe you want to restrict certain users from accessing your web 
+site...I recommend you to alter your database and just add a simple 
+field to store the status in (1=active, 0=inactive).
+
+Should you ban a whole country because you target only regional traffic 
+and they're eating your bandwith (hard to believe but...) ? <a href="http://www.analysespider.com/geo-targeting/geo-targeting.html" target="_blank">Here</a>'s
+ a solution that can be easily modified and implemented. 
+
+Whatever the reason is (and if you're here in need for such tools please
+ use the comments form and let us know your intention and also the motif
+ that made you search for something like this) we will try to find out 
+various ways of restricting a (or more?!:) visitor's access to your web 
+site.
+
+I will start with a PHP solution that uses wildcards so you can ban a 
+whole class just by replacing the desired class with an asterix "*" that
+ will also be our wildcard. This is an implementation of the tutorial 
+made by <a href="http://www.phpheads.com/" target="_blank">phpheads</a> since it's simple and effective. An array will be created to hold the list of banned ip's.
+
+			<pre>//Wilcard character is an asterix, *
+	$ip_ban = array();
+	$ip_ban[] = "10.10.10.*"; // Bans 10.10.10.0 - 10.10.10.255
+	$ip_ban[] = "10.12.13.50"; // Bans 10.12.13.50
+
+	if(in_array($_SERVER['REMOTE_ADDR'],$ip_ban)) 
+	{
+		die("Your IP Address has been banned.");//Kill/stop the script and show message to user.
+	} 
+	else 
+	{
+		//Do loop through bans:
+		foreach($ip_ban as $ban) 
+		{
+			if(eregi($ban,$_SERVER['REMOTE_ADDR'])) 
+			{
+				die("Your IP Address has been banned."); //Kill/stop the script and show message to user.
+			}
+			//Finished loop
+		}
+	}</pre>
+
+
+As you can see we stored our ip's (simple or by range using wildcards) 
+in an array ($ip_ban[]) and produced a loop to compare the 
+$_SERVER['REMOTE_ADDR'] which is the ip address of the visitor with the 
+data that is in our array. If a match comes out, the script will die and
+ output an error message.
+
+Anyways, instead of $_SERVER['REMOTE_ADDR'] I would use a function which
+ it's not an ultimate solution but it will find out if the visitor is 
+behind a proxy trying to hide his real ip. Try to remember that this is 
+simple stuff and will not stop users behind SOCKS proxies or users that 
+benefit (or not by situation) from a dynamic ip which changes from a pc 
+restart to another or from 15 to 15 minutes...whatever. For dynamic ip's
+ I would recommend to use the script with a wildcard since most 
+providers offer ip's from the same range for example : 100.100.100.1-255
+ - where only the class D will change from 1 to 255 so I would store 
+this in my array:
+$ip_ban[] = "100.100.100.*"; but try to remember that you will also 
+block another 254 of possible users that have nothing to do with the war
+ you're into.
+
+Here's the function that might be more useful than 
+$_SERVER['REMOTE_ADDR']:
+
+					<pre>function ip_first($ips) {
+		  if (($pos = strpos($ips, ',')) != false) {
+		    return substr($ips, 0, $pos);
+		  } else {
+		    return $ips;
+		  }
+		}
+
+		function ip_valid($ips) {
+		  if (isset($ips)) {
+		    $ip    = ip_first($ips);
+		    $ipnum = ip2long($ip);
+		    if ($ipnum !== -1 &amp;&amp; $ipnum !== false &amp;&amp; (long2ip($ipnum) === $ip)) { // PHP 4 and PHP 5
+		      if (($ipnum &lt; 167772160   || $ipnum &gt;   184549375) &amp;&amp; // Not in 10.0.0.0/8
+		          ($ipnum &lt; -1408237568 || $ipnum &gt; -1407188993) &amp;&amp; // Not in 172.16.0.0/12
+		          ($ipnum &lt; -1062731776 || $ipnum &gt; -1062666241))   // Not in 192.168.0.0/16
+		        return true;
+		    }
+		  }
+		  return false;
+		}
+
+		function ip() {
+		  $check = array('HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED',
+		                 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED',
+		                 'HTTP_VIA', 'HTTP_X_COMING_FROM', 'HTTP_COMING_FROM');
+
+		  foreach ($check as $c) {
+		    if (ip_valid(&amp;$_SERVER[$c])) {
+		      return ip_first($_SERVER[$c]);
+		    }
+		  }
+
+		  return $_SERVER['REMOTE_ADDR'];
+		}</pre>
+
+
+- where ip() is supposed to be the real ip of our visitor (&lt;?php echo
+ ip(); ?&gt;).
+
+If you don't want to always modify the page that contains our array and 
+you wish to store the banned ip's into a database here's an example of 
+the script with the mods:<br><br><div style="text-align: center; margin: auto;"><div style="margin: 0 3px 3px 0;"><a href="http://www.wlmarketing.com/webdev.html"><img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/wl_330x250_1.gif" border="0"></a></div>
+</div>
+
+			<pre>$check_visitor = "SELECT `visitor_ip` FROM `banned_visitors`";
+$query_check_visitor = mysql_query($check_visitor) or die(mysql_error());
+
+$ip_ban = array();
+
+	while ($row=mysql_fetch_array($query_check_visitor))
+	{
+		$ip_ban[] = $row['visitor_ip'];
+	}
+
+	if(in_array(ip(),$ip_ban))
+	{
+		die("Your access was restricted on this server.");
+	}
+	else
+	{
+		foreach($ip_ban as $ip)
+		{
+			if(eregi($ip,ip())) die("Your access was restricted on this server.");
+		}
+
+	}</pre>
+
+
+Well that's just about it with the PHP banning. You could also use 
+.htaccess to restrict the access of your visitors. A method that I also 
+recommend instead of the one above. The usage is simple...deny from, 
+allow from...for example:
+
+			<pre>&lt;limit GET&gt; 
+order deny,allow 
+deny from all 
+allow from 192.168
+&lt;/limit&gt;</pre>
+
+
+will allow only visitors that have the ip starting with 192.168. which 
+means 192.168.[1-255].[1-255] !IMPORTANT - don't put a space at the 
+after or before the comma that sits between deny and allow because the 
+server will take it as an error and restrict everyone's access. If we 
+change it into:
+
+			<pre>&lt;limit GET&gt; 
+order allow,deny
+allow from all 
+deny from 192.168
+&lt;/limit&gt;</pre>
+
+
+A very good implementation of this method is used for cron jobs. Let's 
+suppose you have a cron script which will execute something at a given 
+time (for a detailed explanation of a cron job please click <a href="http://www.unixgeeks.org/security/newbie/unix/cron-1.html" target="_blank">this </a>link) and we don't want it to be executed by nobody else but our server. I would use this command:
+
+			<pre>&lt;limit GET&gt; 
+order deny,allow 
+deny from all 
+allow from 127.0.0.1
+&lt;/limit&gt;</pre>
+
+
+- where 127.0.0.1 is our localhost and only the local server will be 
+able to execute this file. This is a variable, depends on your local 
+configuration. Please check with your hosting provider for this 
+information.
+
+Another good reason to apply restrictions would be when a visitor will 
+enter an X amount of failed logins for example. A solution would be to 
+apply it automatically for an Y amount of time and output a nice error 
+telling him that but, again, not ban his IP. A good software to 
+implement in this case can be found <a href="http://www.configserver.com/cp/csf.html" target="_blank">here</a>.
+ It will probably need some good knowledge of server setting. Also, as a
+ simpler version in PHP I would recommend you to store the attempts in a
+ session like this:
+
+			<pre>	if(isset($_SESSION['failed_logins'])) 
+	{
+		$_SESSION['failed_logins']++;
+	} 
+	else 
+	{
+		$_SESSION['failed_logins'] = 1;
+	}</pre>
+
+
+This is so easy to extend and, for example (supposing that we have a 
+table in our database to store the login attempts id, ip and time) if 
+the $_SESSION['failed_logins'] reaches 3 do an insert. Going further, 
+with some basic date and time calculations (and with a global variable 
+of 30 mins of restriction after 3 failed login attempts) we extract the 
+data from our table (Where ip=$_SERVER['REMOTE_ADDRESS']) and we do the 
+math. If the actual time minus the time that was entered in the database
+ along with the banned ip is smaller &lt; than 30 minutes...we still 
+hide the login form... if it's bigger &gt; ..you know the rest.
+
+As a conclusion of this small tutorial I will ask you to read very 
+carefully and try to understand your problem and also try to apply the 
+proper method. Don't use what you shouldn't!
+
+P.S. Don't forget to leave your comment...<b>WHY?</b>        
+        <div class="clear"></div>
+        <!--
+        <div style="margin-top:10px;padding:5px;border:1px solid #ccc">
+        <div style="width:300px; float:left">
+		<a href="http://www.phplogin.net" title="PHP login script" target="_blank" border="0"><img border="0" src="http://www.roscripts.com/uploads/banners/phplogin300.jpg" alt="PHP login script"></a>
+        </div>
+        <div style="width:330px; float:right">
+	        <a href="http://www.wallpaperscript.net" title="Wallpaper script" target="_blank" border="0"><img border="0" src="http://www.roscripts.com/uploads/banners/330_250.gif" alt="Wallpaper script"></a>		
+        </div>
+        <div class="clear"></div>
+        </div>
+-->
+<br>
+        <div align="right">
+            <p><a href="http://feeds.feedburner.com/ArticlesAndProgrammingTutorials">
+               <img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/ArticlesAndProgrammingTutorials.gif" style="border:0" alt="" height="26" width="88"></a></p>
+        </div>
+	</div>
+       </div></div></div>
+       <div class="tabs_arround">
+       <div class="tabs" style="margin-bottom:5px">
+		<h3 class="title_tabMain">More details &amp; rating</h3>
+		<ul>
+			<li class="active"><a id="toggle1" href="#" name="toggle1">
+			<img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/1.gif" alt="toogle" border="0" height="16" width="16"></a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+       
+       <div style="margin: 0px; overflow: hidden;"><div style="margin: 0px;" id="container1">
+       <div class="tabs_bottom">
+	<div id="div_122">
+<div><div style="width:70px; margin:0 0 10px 0; float:left"><div class="votebadge" id="vote_122"><ul><li class="voteTotal"><a title="Vote" onclick="xajax_insertRating(122);" href="javascript:void(0)"><span>13</span></a></li></ul></div></div><div style="width:535px; padding:0 10px 0 10px; float:right; border-left:1px solid #ccc"><span class="style13"><a href="http://www.roscripts.com/How_to_restrict_visitor_access_to_your_web_site-122.html">How to restrict visitor access to your web site</a></span><br><p class="news-submitted" style="margin-bottom:3px">Added by <a href="http://www.roscripts.com/authors/show/2" title="Show author details">roScripts</a> on April-18-2007, 3:53 pm</p><div class="description">We will learn various ways of restricting the visitor's access to your web site</div><div class="nom-det"><a href="http://www.roscripts.com/articles/comments/122" class="tool comments">5 comments</a><a class="tool" onclick="xajax_bury(122);" href="javascript:void(0)">Bury</a></div><span class="bookmark" id="span_122"><a class="tool" href="javascript:void(0)" onclick="xajax_bookmark(122);">Bookmark</a></span><span class="tool">Category: <a href="http://www.roscripts.com/articles/show_categories/9" title="PHP">PHP</a> » <a href="http://www.roscripts.com/articles/show_categories/88" title="Tutorials">Tutorials</a> » <a href="http://www.roscripts.com/articles/show_articles/94" title="Security systems">Security systems</a></span></div><div class="clear"></div><div class="br"></div></div>	</div>
+        </div>
+       </div></div></div>
+<br>
+       <div class="tabs_arround">
+       <div class="tabs" style="margin-bottom:5px">
+		<h3 class="title_tabMain">Related articles (52)</h3>
+		<ul>
+			<li class="active"><a id="toggle2" href="#" name="toggle2">
+			<img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/1.gif" alt="toogle" border="0" height="16" width="16"></a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+       
+       <div style="margin: 0px; overflow: hidden;"><div style="margin: 0px;" id="container2">
+       <div class="tabs_bottom">
+   <div class="recentlyAdded">
+    <ul>
+     <li><a href="http://www.roscripts.com/Form_Handling_basic_Part_1-243.html" title="Form Handling (basic) Part 1">Form Handling (basic) Part 1<em>This tutorial will teach you how to make a form on your website send you an e-mail without exposing your email address</em><span>PHP » Tutorials » Email systems</span></a></li>
+     <li><a href="http://www.roscripts.com/Building_a_dynamic_drop_down_menu-216.html" title="Building a dynamic drop down menu">Building a dynamic drop down menu<em>Learn how to use the power of PHP and CSS to build dynamic drop down menus</em><span>PHP » Articles » Other</span></a></li>
+     <li><a href="http://www.roscripts.com/PHP_MySQL_by_examples-193.html" title="PHP MySQL by examples">PHP MySQL by examples<em>Learn by examples how to manipulate your database using PHP</em><span>PHP » Tutorials » Database manipulation</span></a></li>
+     <li><a href="http://www.roscripts.com/Translating_your_site_the_easy_way-180.html" title="Translating your site the easy way">Translating your site the easy way<em>This article will try to give you all the needed information to use this great extension - gettext.</em><span>PHP » Articles » Extending PHP</span></a></li>
+     <li><a href="http://www.roscripts.com/Security_in_your_online_applications-174.html" title="Security in your online applications">Security in your online applications<em>Protect yourself, your server and your scripts. Also covers session fixation and SQL injection.</em><span>PHP » Articles » Security systems</span></a></li>
+    </ul>
+   </div>
+   <div align="right"><img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/6.gif" alt="View all" align="bottom" border="0"> <a href="http://www.roscripts.com/articles/show_all/9" title="show all articles">View all</a></div>
+        </div>
+       </div></div></div>
+       <div class="tabs_arround">
+       <div class="tabs" style="margin-bottom:5px">
+		<h3 class="title_tabMain">Comments</h3>
+		<ul>
+			<li class="active"><a id="toggle3" href="#" name="toggle3">
+			<img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/1.gif" alt="toogle" border="0" height="16" width="16"></a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	
+       <div style="margin: 0px; overflow: hidden;"><div style="margin: 0px;" id="container3">
+	<div class="tabs_bottom">
+		<span>
+
+			For coding help and further support please use the <a href="http://www.roscripts.com/forum" title="forum">forum</a>.
+
+		</span>
+		<br><br>
+   <div class="comments">
+    <ul>
+     <li style="background-color:#fff"><a href="http://www.roscripts.com/authors/show/2" title="Show author details">roScripts</a> says:<em>It may be dangerous...</em><br><span>2007-12-09 | 06:10 am</span></li>
+     <li style="background-color:#fafafa"><a href="http://www.roscripts.com/authors/show/4240" title="Show author details">getmypage</a> says:<em>Hi,
+ I was looking for this type of article to deter denial-of-service type 
+attacks. Like, if the rate of page request from a particular IP is 2 
+pages per sec or even 3 pages per two seconds, it is most probably a 
+bot. Now, you may wish to block it. But you should think a while and 
+read its progress, that if it has not requested a page more than once 
+than it might a search engine bot. so you can leave it, and any other 
+case then block that IP for some time.</em><br><span>2007-12-08 | 01:50 am</span></li>
+     <li style="background-color:#fff"><a href="http://www.roscripts.com/authors/show/3228" title="Show author details">b0r1s</a> says:<em>hi
+ !
+I had a lot of spam registrations on my web site and i puted an image 
+capcha to the form. I made all possbible tests and i was convinced that i
+ wont get this spams anymore but im still getin them. How is that 
+possible ?  I made the Accept Terms checkbox name changin everytime the 
+user loads the page (generated with php random letters and numbers) and i
+ still get the same. I dont care about this cos its not takin bandwidth 
+or other stuff (i used 1 or 0 to aprove ) but i need to stop this.
+I tried to block ip adresses from my hosting panel but there are a lot.
+Any advise ? Wot should i do ? i cannot stay everyday blockin this IP's 
+from everywhere
+thanx in advance.</em><br><span>2007-11-13 | 02:52 am</span></li>
+     <li style="background-color:#fafafa"><a href="http://www.roscripts.com/authors/show/2" title="Show author details">roScripts</a> says:<em>I'm not aware of any way of achieving this kind of restriction and I doubt you will find help.</em><br><span>2007-06-28 | 10:05 am</span></li>
+     <li style="background-color:#fff"><a href="http://www.roscripts.com/authors/show/577" title="Show author details">JUPAMan</a> says:<em>Hi,
+ 
+This is very helpful, however what I'm looking for is this; if possible.
+ 
+on a membership site, access needs to be restricted to a whole state, 
+not just IP addresses. So if I have a membership site say in NJ, and I 
+want to restrict sales to anybody that lives in say, AL, is something 
+like that possible? 
+
+Just wondering, 
+
+Thanks, 
+
+The JUPA Man</em><br><span>2007-06-27 | 07:26 pm</span></li>
+    </ul>
+   </div>
+	<div align="left"><img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/6.gif" alt="View all" align="bottom" border="0"> <a href="http://www.roscripts.com/articles/comments/122" title="show all comments">View all</a> /  <a href="http://www.roscripts.com/articles/comments/122#comment_insert" title="Add comment">Add comment</a></div>
+        </div>
+       </div></div></div>
+       </div>
+        </div>
+	<!--RIGHT END-->
+	<!--L E F T  S T A R T-->
+	<div id="left">
+	<div style="background-color: #333A46; margin-left: 15px;margin-top: 36px;">
+	<div style="background-image: url('http://www.roscripts.com/images/nav_top.gif'); width:74px; height: 16px;"></div>
+	<div id="innav">
+		<div class="script_cat">
+			<ul>
+				<li><a href="http://www.roscripts.com/articles/show_categories/170" title="Ajax">Ajax</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/1" title="ASP">ASP</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/2" title="ASP.NET">ASP.NET</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/19" title="Actionscript">Actionscript</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_articles/3" title="C and C++">C and C++</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_articles/4" title="CFML">CFML</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/5" title="CGI and Perl">CGI and Perl</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/11" title="CSS">CSS</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_articles/16" title="C#">C#</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_articles/6" title="Flash">Flash</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/13" title="HTML">HTML</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_articles/7" title="Java">Java</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/8" title="JavaScript">JavaScript</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_articles/10" title="MySQL">MySQL</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/9" title="PHP">PHP</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/408" title="Photoshop">Photoshop</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/12" title="SEO">SEO</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_articles/14" title="VB">VB</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_articles/15" title="XML">XML</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/462" title="Websites">Websites</a></li>
+				<li><a href="http://www.roscripts.com/articles/show_categories/17" title="Other">Other</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div style="background-image: url('http://www.roscripts.com/images/nav_bottom.gif'); width:46px; height: 16px;"></div>
+	</div>
+<br><center><a href="http://www.wmmediacorp.com/"><img src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/wmmed2.jpg" title="Sell Website" alt="Sell Websites" border="0" width="200"></a></center>
+   <div style="padding-bottom:1px;margin-top:35px;">
+    <h4 style="color:#666; text-transform:uppercase; font-weight:bold; font-size:85%;padding:0;margin:0">→ LATEST NEWS &amp; ARTICLES</h4></div>
+   <div class="show_news">
+    <ul>
+     <li><a href="http://www.roscripts.com/Form_Handling_basic_Part_1-243.html">Form Handling (basic) Part 1<em>This tutorial will teach you how to make a form on your website send you an e-mail without exposing your email address</em><span>
+     → Comments 1
+    </span></a></li>
+     <li><a href="http://www.roscripts.com/10_tips_to_speed_up_your_web_site_building_with_Dreamweaver.-221.html">10 tips to speed up your web site building with Dreamweaver.<em>Dreamweaver
+ is one of the top HTML and code editors according to me. I tried others
+ including Frontpage, but i always came back to Dreamweaver.</em><span>
+     → No comments added yet
+    </span></a></li>
+     <li><a href="http://www.roscripts.com/Web_tools_of_the_month-217.html">Web tools of the month<em>The best web tools of the month by roScripts</em><span>
+     → No comments added yet
+    </span></a></li>
+     <li><a href="http://www.roscripts.com/Building_a_dynamic_drop_down_menu-216.html">Building a dynamic drop down menu<em>Learn how to use the power of PHP and CSS to build dynamic drop down menus</em><span>
+     → Comments 41
+    </span></a></li>
+    </ul>
+   </div>
+   <div class="clear"></div>
+   <div style="padding-bottom:1px;margin-top:35px;">
+    <h4 style="color:#666; text-transform:uppercase; font-weight:bold; font-size:85%;padding:0;margin:0">→ we recommend</h4></div>
+   <div class="partners">
+    <ul>
+     <li><a href="http://www.wmmediacorp.com/" title="Sell Website" target="_blank">Sell Websites → <em>Best place to sell your website.</em></a></li>
+     <li><a href="http://wmmedia.simplephp.hop.clickbank.net/?tid=ROSCRIPT" title="Simple PHP" target="_blank">Simple PHP → <em>Learn PHP now with videos and books.</em></a></li>
+     <li><a href="http://wmmedia.click333.hop.clickbank.net/?tid=ROSCRIPT" title="Wordpress Script Generator" target="_blank">Wordpres Script Generator → <em>Create wordpress plugins in minutes.</em></a></li>
+     <li><a href="http://wmmedia.sfactory.hop.clickbank.net/?tid=ROSCRIPT" title="PLR Poster" target="_blank">PLR Poster → <em>Post hundreds of articles to wordpress blogs at once.</em></a></li>
+    </ul>
+   </div>
+   <div class="clear"></div>
+	</div>
+	<!--LEFT END-->
+<!--F O O T E R  S T A R T-->
+    <div id="footer">
+    <div id="footer_in"></div>
+    </div>
+<!--FOOTER END-->
+    </div>
+	<div id="footer_main" style="padding-top:15px;">
+		<span class="footer">
+			<a href="http://www.roscripts.com/listings" title="Scripts">Scripts</a> | 
+			<a href="http://www.roscripts.com/articles" title="Articles">Articles</a> | 
+			<a href="http://www.roscripts.com/jobs" title="Jobs">Jobs</a> | 
+			<a href="http://www.roscripts.com/nominate" title="Resources">Resources</a> | 
+			<a href="http://www.roscripts.com/snippets" title="Snippets">Snippets</a> | 
+			<a href="http://www.roscripts.com/contact" title="Contact">Contact</a> | 
+			<a href="http://www.roscripts.com/search" title="Search">Search</a> | 
+			<a href="http://www.roscripts.com/login" title="Login">Login</a>
+		</span>
+		<span class="footer" style="font-weight:normal; font-size:12px;">
+			<br>Copyright © 2006 - 2013 roscripts.com
+		</span>
+	</div>
+	<script src="How%20to%20restrict%20visitor%20access%20to%20your%20web%20site_files/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-1736087-50";
+	urchinTracker();
+	</script>
+
+
+</body></html>

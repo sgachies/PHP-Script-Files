@@ -1,0 +1,33 @@
+#//RewriteEngine On
+#//_htaccess file unix and mac view .htaccess as hidden
+
+#Forbidden access to certain folders (-)neg value and (+)pos access to files
+Options -Indexes
+
+#Fancy indexing and styling
+IndexOptions FancyIndexing
+
+#change default page
+#DirectoryIndex  main.php
+
+# hides file extextions*.ico , *.txt ,*.php  *.ext ->wildcard
+# IndexIgnore *
+
+#security 1
+<Files *.txt>
+	order allow,deny
+	deny from none
+</Files>
+#security 2
+<FilesMatch '\.(txt|ico)$'>
+	order allow,deny
+	deny from all
+</FilesMatch>
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-l
+#RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+
+

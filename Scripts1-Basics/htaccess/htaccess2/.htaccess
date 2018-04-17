@@ -1,0 +1,24 @@
+#.htaccess mod_rewrite
+
+#The request that we get from the url of the current page
+#d-director
+#f-file
+#l-symbolic link
+#QSA-Query String Append
+
+#Disallow viewing of .htaccess files
+#<Files.htaccess>
+#Order allow deny
+#deny all
+#</Files>
+
+
+<Ifmodule mode_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+</Ifmodule>

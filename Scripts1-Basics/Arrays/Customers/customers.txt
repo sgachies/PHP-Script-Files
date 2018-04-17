@@ -1,0 +1,4 @@
+mary,kenya,nairobi,21
+mike,kenya,kisumu,30
+ian,kenya,mombasa,18
+

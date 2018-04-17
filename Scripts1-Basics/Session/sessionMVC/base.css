@@ -1,0 +1,51 @@
+
+{
+padding-bottom:15px;
+padding-left:15px;
+}
+.box ol li
+{
+	margin-bottom:5px;
+}
+/*notification*/
+.notification.success{
+background:#effeb9 url('../img/icons/success.png') no-repeat 10px 10px
+border-color:#98c700;
+}
+
+.notification.error{
+background:#fccac3 url('../img/icons/error.png') no-repeat 10px 10px
+border-color:#ea5338;
+}
+
+.notification.warning{
+background:#ffeaa7 url('../img/icons/warning.png') no-repeat 10px 10px
+border-color:#f9b418;
+}
+
+.notification.info{
+background:#d1e4f3 url('../img/icons/info.png') no-repeat 10px 10px
+border-color:#4d8fcc;
+}
+
+.notification.tip{
+background:#feeac9 url('../img/icons/tip.png') no-repeat 10px 10px
+border-color:#d3849;
+}
+
+notification{
+	border-width:1px;
+	border-style:solid;
+	padding:17px 17px 17px 55px;
+	margin-bottom:15px;
+	-moz-border-radius:3px;
+	-webkit-border:3px;
+	-border-radius:3px;
+	
+}
+.notification .close{
+	background:url("../img/icon/close.png") no-repeat scroll 0 0 transparent;
+	
+		
+
+}

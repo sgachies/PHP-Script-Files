@@ -1,0 +1,19 @@
+#.htaccess mod_rewrite
+
+<Ifmodule mode_rewrite.c>
+RewriteEngine On
+
+#The request that we get from the url of the current page
+#d-director
+#f-file
+#l-symbolic link
+#QSA-Query String Append
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+</Ifmodule>
+

@@ -1,0 +1,89 @@
+body
+{ 
+background:url(../bg/b3.jpg);
+text-align:left;
+ }
+ 
+
+#wrap
+{
+width:1000; 
+margin:0 auto; 
+text-align:left; 
+background-color:FFF;
+}
+#mine
+{
+width:150; 
+margin-right:25px;
+margin-left:25px;  
+text-align:left; 
+background-color:white;
+
+}
+
+ #banner{
+ margin:0 auto;
+ width:1000;
+ height:20;
+ border:groove #069 1px;
+ font-size:20px;
+ background-color:black;
+ 
+ }
+ 
+ /*left col*/
+#leftcol
+{
+ width:400px; 
+ float:left; 
+ margin-right:25px;
+ margin-left:25px; 
+ margin-top:0px;
+ display:inline; 
+ margin-bottom:10px;
+ 
+ }
+
+/*right col*/
+#rightcol
+{
+ width:500px;
+ float:left; 
+ margin-right:25px;
+ margin-left:290px;
+ margin-top:0px; 
+ margin-bottom:15px;
+ overflow:hidden; 
+ display:inline; 
+ border1:solid 1px;
+ background-image:./img/b3.jpg;
+ }
+ /*contact*/
+ #contact_container
+ {
+ width:300px;
+ margin-left:450px;
+ margin-top:15px; 
+ margin-bottom:15px;
+ }
+ #contact_container label
+  {
+  display:block;
+  font-type:1em;
+
+ }
+  #contact_container input,textarea,select{
+   font-size:1em;
+   padding:3px;
+   border:#ccc 2px solid;
+   width:50%;
+ }
+ 
+/*footer*/
+#footer{clear:both; overflow:hidden; background:#afa292; padding:10px; color:#eee; border:solid 1px #fff; }
+#footer #copyright{ float:right;}
+#footer ul li{float:left; padding:0px 4px; text-transform:uppercase;}
+#footer a{color:#eee; font-weight:bold; }
+#footer a:hover{color:#FFF;}
+ }

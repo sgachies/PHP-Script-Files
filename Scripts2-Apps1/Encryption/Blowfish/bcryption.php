@@ -1,0 +1,1 @@
+<?PHP $password='abc';$password_hash = crypt($password); echo $password."<br>";echo  $password_hash;?>

@@ -1,0 +1,55 @@
+<?php
+Class Encryption{
+	
+	
+	function set1($str1){
+	//shifts every alpha numeric character 13 further along
+	$str1 = str_rot13($str1);
+	$str1 = strtolower($str1);
+	$str1 = str_replace('a','1',$str1);
+	$str1 = str_replace('b','2',$str1);
+	$str1 = str_replace('c','3',$str1);
+	$str1 = str_replace('d','4',$str1);
+	$str1 = str_replace('e','5',$str1);
+	$str1 = str_replace('f','6',$str1);
+	$str1 = str_replace('g','7',$str1);
+	$str1 = str_replace('h','8',$str1);
+	$str1 = str_replace('i','9',$str1);
+	$str1 = str_replace('j','0',$str1);
+	$str1 = str_replace(' ','0',$str1);
+	return $str1;
+	}
+		
+		
+	function set2($str2){	
+	$str1 = str_rot13($str2);
+	$str2 = strtolower($str2);
+	$str2 = str_replace('k','1',$str2);
+	$str2 = str_replace('l','2',$str2);
+	$str2 = str_replace('m','3',$str2);
+	$str2 = str_replace('n','4',$str2);
+	$str2 = str_replace('o','5',$str2);
+	$str2 = str_replace('p','6',$str2);
+	$str2 = str_replace('q','7',$str2);
+	$str2 = str_replace('r','8',$str2);
+	$str2 = str_replace('s','9',$str2);
+	$str2 = str_replace('t','0',$str2);
+	$str2 = str_replace(' ','0',$str2);
+	return $str2;
+	}
+
+	
+	function set3($str3){
+	$str3 = str_rot13($str3);
+	$str3 = strtolower($str3);
+    $str3 = str_replace('u','1',$str3);
+	$str3 = str_replace('v','2',$str3);
+	$str3 = str_replace('w','3',$str3);
+	$str3 = str_replace('x','4',$str3);
+	$str3 = str_replace('y','5',$str3);
+	$str3 = str_replace('z','6',$str3);
+	$str3 = str_replace(' ','0',$str3);
+	return $str3;
+	}
+}
+?>

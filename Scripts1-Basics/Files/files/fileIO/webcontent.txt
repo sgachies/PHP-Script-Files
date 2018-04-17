@@ -1,0 +1,195 @@
+﻿
+
+
+
+   
+
+
+
+
+    
+    user registration
+
+    
+    
+     
+	label {
+		display: inline-block; width: 8em;
+	}
+	fieldset div {
+		margin-bottom: 1em;
+	}
+	fieldset .help {
+		display: inline-block;
+	}
+	
+	.error_strings{ 
+	   font-family:Verdana; 
+	   font-size:12px; 
+	   color:black;
+	   text-align:center;}
+	
+	
+ 
+
+
+
+
+
+
+    
+
+
+
+    
+    
+        
+            
+                
+Thrifty
+"event planning at our best"
+
+
+      
+                
+            
+			
+
+
+
+
+Pricing	
+Events
+Others	
+FAQ		
+Email us
+
+
+
+
+			 Register&nbsp&nbsp
+			 Login&nbsp&nbsp
+ 	    
+ 
+
+
+
+
+
+                
+                    
+                        
+
+    
+                
+                
+                    
+					
+
+    
+    Events
+    Accomodation
+    FAQ
+    Gallery
+	
+    Domain
+	Accomodation
+	Conferences
+                    
+                                	
+                    
+                
+		
+    
+
+
+                          
+                        
+                        
+
+    
+
+                           
+                           
+
+
+USER LOGIN 
+
+
+			
+
+
+
+		
+		  
+			User name
+			
+		
+		
+		
+			Password
+			
+		
+	
+		
+
+
+Submit
+
+&nbsp&nbsp
+Reset
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Communicate with us through social media and share with us your experiences
+
+facebook.com/thrifty
+
+twitter handle @thrifty
+
+
+
+
+
+		
+    
+
+
+                          
+                        
+                    
+                
+            
+            
+            
+                
+                    
+			
+
+administrator
+
+Copyright 2013. All Rights Reserved.
+                    
+                
+            
+    		
+        
+    
+
+
+//
+
+
+
+

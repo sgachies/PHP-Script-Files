@@ -1,0 +1,23 @@
+<?php
+// Configuration variables
+$info = "1";
+$test = "0";
+ 
+// Data for text message
+$from = "Jims Autos";
+$selectednums = "447123456789";
+$message = "Test with an ampersand (&) and a £5 note";
+$message = urlencode($message);
+ 
+// Prepare data for POST request
+$data = "uname=".$uname."&pword=".$pword."&message=".$message
+."&from=". $from."&selectednums=".$selectednums."&info=".$info."&test=".$test;
+ 
+// Send the POST request with cURL
+$ch = curl_init('http://www.txtlocal.com/sendsmspost.php');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$result = curl_exec($ch); //This is the result from Textlocal
+curl_close($ch);
+?>

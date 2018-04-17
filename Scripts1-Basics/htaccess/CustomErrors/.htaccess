@@ -1,0 +1,11 @@
+
+ErrorDocument 400 /redirect/400.php
+ErrorDocument 401 /redirect/401.php
+ErrorDocument 403 /redirect/403.php
+ErrorDocument 404 /redirect/404.php
+ErrorDocument 405 /redirect/405.php
+ErrorDocument 408 /redirect/408.php
+ErrorDocument 414 /redirect/414.php
+ErrorDocument 500 /redirect/500.php
+ErrorDocument 502 /redirect/502.php
+ErrorDocument 504 /redirect/504.php
